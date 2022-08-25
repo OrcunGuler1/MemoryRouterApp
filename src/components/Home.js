@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
     return (
         <div className='mt-4'>
-            <h3 className='lh-lg'>
+            <h3 className='lh-lg ms-4'>
                 Hello! This is a project to test out MemoryRouter from the
                 package{' '}
                 <span className='text-primary'>
@@ -17,13 +17,13 @@ const Home = () => {
                 </span>
                 .
             </h3>
-            <h4>List of routes:</h4>
+            <h4 className='ms-4'>List of routes:</h4>
             <ul className='list-group w-100'>
                 {links.map((link, index) => (
                     <li key={index} className='list-group-item w-100 d-flex'>
                         <Link
                             className='text-primary text-capitalize text-center text-decoration-none w-100'
-                            {...link} 
+                            {...link}
                         />
                     </li>
                 ))}
