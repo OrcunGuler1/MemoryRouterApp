@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { MemoryRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import routes from './routes/routes'
+import { links } from './routes/links'
+import './styles/styles.scss'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Router>
+                <nav className='w-100 bg-secondary d-flex flex-row justify-content-center py-3'>
+                    {links.map((link, index) => (
+                        <Link
+                            key={index}
+                            className='text-black text-decoration-none mx-2'
+                            {...link}
+                        />
+                    ))}
+                </nav>
+                <Routes>
+                    {routes.map((route, index) => (
+                        <Route key={index} {...route} />
+                    ))}
+                </Routes>
+            </Router>
+        </div>
+    )
 }
 
-export default App;
+export default App
