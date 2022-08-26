@@ -3,4 +3,5 @@ export const links = [
     { to: '/about', children: 'About' },
     { to: '/users', children: 'Users' },
     { to: '/cards', children: 'Cards' },
+    { to: '/adresses', children: 'Adresses' },
 ]

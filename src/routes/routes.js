@@ -1,6 +1,6 @@
 import * as pages from '../components'
 
-const { About, Home, Users, CardInfo } = pages
+const { About, Home, Users, CardInfo, Adresses } = pages
 
 const routes = [
     {
@@ -18,6 +18,10 @@ const routes = [
     {
         path: 'cards',
         element: <CardInfo />,
+    },
+    {
+        path: 'adresses',
+        element: <Adresses />,
     },
 ]
 export default routes
