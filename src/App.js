@@ -5,7 +5,7 @@ import './styles/styles.scss'
 
 function App() {
     return (
-        <div>
+        <div className='h-100'>
             <Router>
                 <nav className='w-100 bg-secondary d-flex flex-row justify-content-center py-3'>
                     {links.map((link, index) => (
@@ -21,6 +21,14 @@ function App() {
                         <Route key={index} {...route} />
                     ))}
                 </Routes>
+                <footer className='fixed-bottom w-100 bg-primary text-dark align-items-baseline'>
+                    <div className='d-flex justify-content-center'>
+                        <p className='text-center m-0 py-2'>
+                            None of the information in this website is real. It
+                            is only for educational purposes.
+                        </p>
+                    </div>
+                </footer>
             </Router>
         </div>
     )

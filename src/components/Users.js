@@ -1,4 +1,4 @@
-import { getRandomData } from '../service/axios'
+import { getRandomDataWithParams } from '../service/axios'
 import { useState, useEffect, useCallback } from 'react'
 const Users = () => {
     const [data, setData] = useState()
@@ -8,7 +8,7 @@ const Users = () => {
         setLoading(true)
         setError(null)
         try {
-            const data = await getRandomData('/users?size=100')
+            const data = await getRandomDataWithParams('/users', { size: 100 })
             setData([...new Set(data)])
         } catch (error) {
             setError(error)
@@ -49,7 +49,7 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {data &&
-                            data.map((item,index) => (
+                            data.map((item, index) => (
                                 <tr key={index} className='my-2 mx-2'>
                                     <td>
                                         <img
